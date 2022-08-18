@@ -85,24 +85,25 @@ namespace GRUPA1PRA.SecretFiles
 
             //tbNaslov.Text = idBook.ToString();
 
-            a.IDBook = int.Parse(idBook.Trim());
-            a.Title = tbNaslov.Text;
-            a.AuthorL = tbAutorL.Text;
-            a.AuthorF = tbAutorF.Text;
-            a.Price = Double.Parse(tbCijena.Text.Trim());
+
 
 
 
         }
         protected void btnAzuriraj_Click(object sender, EventArgs e)
         {
+            a.IDBook = int.Parse(idBook.Trim());
+            a.Title = tbNaslov.Text;
+            a.AuthorL = tbAutorL.Text;
+            a.AuthorF = tbAutorF.Text;
+            a.Price = Double.Parse(tbCijena.Text.Trim());
             int idBook2 = int.Parse(idBook);
             double cijena2 = Double.Parse(cijena);
 
             SqlHelper.ExecuteDataset(ConfigurationManager.ConnectionStrings["cs"].ConnectionString, "updateBook",
           idBook2, a.Title, a.AuthorF, a.AuthorL, a.Price);
 
-            //  tbIzdavac.Text = "ID" + idBook2 + a.Title + a.AuthorL + a.AuthorF + "cena" + a.Price;
+            tbIzdavac.Text = "ID" + idBook2 + a.Title + a.AuthorL + a.AuthorF + "cena" + a.Price;
 
         }
 

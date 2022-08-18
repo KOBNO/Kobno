@@ -50,7 +50,7 @@
 
 
     <asp:Panel ID="pnlAzuriranje" runat="server">
-     <h2 class="auto-style1">DODAJ NOVU KNJIGU</h2>
+     <h2 class="auto-style1">AŽURIRAJ NOVU KNJIGU</h2>
 
     <div style="padding-left:100px;/*position:relative; margin:auto; justify-content:center;*/">
 
