@@ -24,7 +24,7 @@
 
 <div id="menu">
 <ul>
-<li><a href="*"> <img src="../../images/pic.jpg" alt="Example pic" style="border: 3px solid #ccc; max-height: 25px" /></a></li>
+<li><a href="default.aspx"> <img src="../../images/pic.jpg" alt="Example pic" style="border: 3px solid #ccc; max-height: 25px" /></a></li>
 
    
 <li><a href="default.aspx">Home</a></li>
@@ -63,6 +63,11 @@
 
 <div id="footer">
 Designed by <a href="#">PRA- GRUPA1- KOBNO</a> 
+    <asp:Image ID="Image1" runat="server" Width="50px" />
+
+    <asp:Label runat="server" ID="lbIban" ></asp:Label>
+    <asp:Label runat="server" ID="lbOrg" ></asp:Label>
+    <asp:Label runat="server" ID="lbOIB" ></asp:Label>
 </div>
 </div>
 

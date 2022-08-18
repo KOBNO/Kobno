@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SecretFiles/MASTERPAGESecret/Osnovna.Master" AutoEventWireup="true" CodeBehind="Azuriraj.aspx.cs" Inherits="GRUPA1PRA.SecretFiles.Azuriraj" %>
+﻿<%@ Page Title="Azuriraj" Language="C#" MasterPageFile="~/SecretFiles/MASTERPAGESecret/Osnovna.Master" AutoEventWireup="true" CodeBehind="Azuriraj.aspx.cs" Inherits="GRUPA1PRA.SecretFiles.Azuriraj" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -15,7 +15,7 @@
         }
         .auto-style3 {
             position: relative;
-            margin-top: 9;
+            margin-top: 9px;
         }
     </style>
 </asp:Content>

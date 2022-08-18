@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SecretFiles/MASTERPAGESecret/Osnovna.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="GRUPA1PRA.SecretFiles._default" %>
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/SecretFiles/MASTERPAGESecret/Osnovna.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="GRUPA1PRA.SecretFiles._default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 

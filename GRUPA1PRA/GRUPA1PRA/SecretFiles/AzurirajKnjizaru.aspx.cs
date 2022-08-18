@@ -19,7 +19,7 @@ namespace GRUPA1PRA.SecretFiles
 
 
             //folder path to save uploaded file
-            string folderPath = Server.MapPath("~/OKnjizari/");
+            string folderPath = Server.MapPath("~/Upload/");
 
             //Check whether Directory (Folder) exists, although we have created, if it si not created this code will check
             if (!Directory.Exists(folderPath))
@@ -33,7 +33,7 @@ namespace GRUPA1PRA.SecretFiles
 
             //once file is uploaded show message to user in label control
             lbStatus.Text = Path.GetFileName(FileUpload1.FileName) + " has been uploaded.";
-
+            Global.Logourl = Path.GetFileName(FileUpload1.FileName);
 
 
 
@@ -46,7 +46,9 @@ namespace GRUPA1PRA.SecretFiles
 
         protected void btnDodaj_Click(object sender, EventArgs e)
         {
-
+            Global.IBAN = tbIban.Text;
+            Global.Name = tbNaZIV.Text;
+            Global.OIB = tbOIB.Text;
         }
     }
 }

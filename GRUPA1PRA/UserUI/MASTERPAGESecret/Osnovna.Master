@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Osnovna.master.cs" Inherits="UserUI.MASTERPAGES.Osnovna" %>
+
+<!DOCTYPE html>
+
+
+<html>
+
+<head runat="server">
+<link href="style.css" rel="stylesheet" />
+
+    <title>Jelenini-Andeli</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+<div id="wrap">
+
+<div id="header">
+<h1><a href="Default.aspx">Jelenini-andeli.hr</a></h1>
+<%--<h2>Najbolje knjige na jednom mjestu</h2>--%>
+</div>
+
+<div id="menu">
+<ul>
+<li><a href="Default.aspx"> <img src="../../images/pic.jpg" alt="Example pic" style="border: 3px solid #ccc; max-height: 25px" /></a></li>
+
+   
+<li><a href="Default.aspx">Home</a></li>
+<li><a href="LoginUser.aspx">Login</a></li>
+<li><a href="Registriraj.aspx">Registracija</a></li>
+<li><a href="Search.aspx">Pretraži</a></li>
+
+<li><a href="#">
+    <asp:LinkButton ID="LinkButton1" runat="server"  OnClick="LinkButton1_Click" CssClass="btn btn-info btn-lg">Sign Out</asp:LinkButton>  </a></li>
+
+
+
+</ul>
+</div>
+
+<div id="content">
+
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+<br /><br />
+
+
+
+
+
+<div style="clear: both;"> </div>
+
+</div>
+
+<div id="bottom"> </div>
+
+<div id="footer">
+Designed by <a href="#">PRA- GRUPA1- KOBNO</a> 
+</div>
+</div>
+
+
+
+
+      
+    </form>
+</body>
+</html>

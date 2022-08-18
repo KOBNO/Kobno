@@ -8,10 +8,12 @@ namespace GRUPA1PRA.SecretFiles
 {
     public partial class DodajKnjigu : System.Web.UI.Page
     {
-        string URL;
+        private Book a = new Book();
+        private static string path = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // OcistiFormu();
         }
 
         private void OcistiFormu()
@@ -27,52 +29,8 @@ namespace GRUPA1PRA.SecretFiles
 
         }
 
-        public static Book a = new Book();
-        protected void btnDodaj_Click(object sender, EventArgs e)
-        {
 
 
-            try
-            {
-
-
-                a.AuthorF = tbAutorF.Text.Trim();
-                a.AuthorL = tbAutorL.Text.Trim();
-                a.Title = tbNaslov.Text.Trim();
-                a.Price = Double.Parse(tbCijena.Text.Trim());
-
-
-
-
-                if (a.AuthorL == String.Empty || a.Title == String.Empty)
-                {
-                    throw new Exception(" Poriješan unos");
-
-                }
-
-
-
-                SqlHelper.ExecuteDataset(ConfigurationManager.ConnectionStrings["cs"].ConnectionString, "UploadBook", a.Title, a.AuthorF, a.AuthorL, a.Price);
-
-            }
-
-
-            catch (Exception)
-            {
-                lbStatus.ForeColor = System.Drawing.Color.Red;
-                lbStatus.Text = "Pogriješan Unosa";
-                return;
-            }
-
-
-            lbStatus.ForeColor = System.Drawing.Color.Green;
-            lbStatus.Text = "Uspješan Unos";
-
-
-
-            OcistiFormu();
-
-        }
 
         protected void btnChoose_Click(object sender, EventArgs e)
         {
@@ -96,13 +54,66 @@ namespace GRUPA1PRA.SecretFiles
             lbStatus.Text = Path.GetFileName(FileUpload1.FileName) + " has been uploaded.";
 
 
-
+            path = Path.GetFileName(FileUpload1.FileName);
 
         }
 
         protected void btnOdustani_Click(object sender, EventArgs e)
         {
             Response.Redirect("default.aspx");
+        }
+
+        protected void btnDodaj_Click1(object sender, EventArgs e)
+        {
+            a.AuthorF = tbAutorF.Text.Trim();
+            a.AuthorL = tbAutorL.Text.Trim();
+            a.Title = tbNaslov.Text.Trim();
+            a.Price = Double.Parse(tbCijena.Text.Trim());
+            if (path == null)
+            {
+                path = "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+            }
+            try
+            {
+
+
+
+
+
+
+
+                //if (a.AuthorL == String.Empty || a.Title == String.Empty)
+                //{
+                //    throw new Exception(" Poriješan unos");
+
+                //}
+
+
+                lbStatus.ForeColor = System.Drawing.Color.Green;
+                lbStatus.Visible = true;
+                lbStatus.Text = "Uspješan unos";
+
+                SqlHelper.ExecuteDataset(ConfigurationManager.ConnectionStrings["cs"].ConnectionString, "UploadBook", a.Title, a.AuthorF, a.AuthorL, a.Price, path);
+
+
+            }
+
+
+            catch (Exception)
+            {
+                lbStatus.ForeColor = System.Drawing.Color.Red;
+                lbStatus.Visible = true;
+                lbStatus.Text = "Pogriješan Unosa";
+                return;
+            }
+
+
+            lbStatus.ForeColor = System.Drawing.Color.Green;
+            lbStatus.Text = "Uspješan Unos";
+
+
+
+            OcistiFormu();
         }
     }
 }

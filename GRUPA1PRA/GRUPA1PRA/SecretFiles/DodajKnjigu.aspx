@@ -51,7 +51,7 @@
 
       
 
-        <asp:Button ID="btnDodaj" runat="server" Text="Dodaj"  CssClass="btn btn-primary" style="padding-right:25px; position: relative; left: 120px; top: 1px; "  />
+        <asp:Button ID="btnDodaj" runat="server" Text="Dodaj"  CssClass="btn btn-primary" style="padding-right:25px; position: relative; left: 120px; top: 1px; " OnClick="btnDodaj_Click1"  />
      <asp:Button ID="btnOdustani" runat="server" Text="Odustani"  CssClass="btn btn-primary" style="position: relative; left: 185px; top: 1px" OnClick="btnOdustani_Click" />
     </div>
 

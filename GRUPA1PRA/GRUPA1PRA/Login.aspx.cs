@@ -22,6 +22,7 @@ namespace GRUPA1PRA
             if (System.Web.Security.FormsAuthentication.Authenticate(txtUsername.Text, txtPass.Value))
             {
                 System.Web.Security.FormsAuthentication.RedirectFromLoginPage(txtUsername.Text, false);
+                Response.Redirect(@"/SecretFiles/default.aspx");
             }
             else
             {

@@ -97,6 +97,7 @@ namespace GRUPA1PRA.SecretFiles
             a.AuthorL = tbAutorL.Text;
             a.AuthorF = tbAutorF.Text;
             a.Price = Double.Parse(tbCijena.Text.Trim());
+
             int idBook2 = int.Parse(idBook);
             double cijena2 = Double.Parse(cijena);
 

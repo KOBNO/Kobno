@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace GRUPA1PRA.MASTERPAGES
 {
@@ -11,13 +6,17 @@ namespace GRUPA1PRA.MASTERPAGES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbIban.Text = Global.DisplayIban;
+            lbOrg.Text = Global.Name;
+            Image1.ImageUrl = Global.Logourl;
+            lbOIB.Text = Global.OIBDisplay;
 
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             System.Web.Security.FormsAuthentication.SignOut();
-            Response.Redirect("../Login.aspx?ReturnUrl="+ Server.UrlEncode(Request.Path));
+            Response.Redirect("../Login.aspx?ReturnUrl=" + Server.UrlEncode(Request.Path));
 
         }
     }

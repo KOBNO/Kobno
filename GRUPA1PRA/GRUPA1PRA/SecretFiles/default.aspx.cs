@@ -21,7 +21,7 @@ namespace GRUPA1PRA.SecretFiles
 
         protected void btnriraj_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("AzurirajKnjizaru.aspx");
         }
     }
 }
